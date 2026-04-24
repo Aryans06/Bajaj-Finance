@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFHL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>BFHL Node Processor</h1>
+
+    <div class="box">
+      <label>Enter nodes (comma separated or JSON array)</label>
+      <textarea id="inp" rows="4" placeholder='A->B, A->C, B->D or ["A->B","A->C"]'></textarea>
+      <div class="btns">
+        <button id="go">Process</button>
+        <button id="ex" class="sec">Example</button>
+        <button id="clr" class="sec">Clear</button>
+      </div>
+    </div>
+
+    <div id="loading" style="display:none"><div class="spin"></div> Processing...</div>
+    <div id="err" style="display:none"></div>
+
+    <div id="out" style="display:none">
+      <div class="stats">
+        <div class="st"><span id="vt">0</span><small>Trees</small></div>
+        <div class="st"><span id="vc">0</span><small>Cycles</small></div>
+        <div class="st"><span id="vd">-</span><small>Max Depth</small></div>
+        <div class="st"><span id="vr">-</span><small>Largest Root</small></div>
+      </div>
+
+      <p class="meta"><b>User:</b> <span id="mu"></span> &nbsp; <b>Email:</b> <span id="me"></span> &nbsp; <b>Roll:</b> <span id="mr"></span></p>
+
+      <h2>Hierarchies</h2>
+      <div id="cards"></div>
+
+      <div id="inv-wrap" style="display:none">
+        <h3>Invalid Entries</h3>
+        <div id="inv" class="chips"></div>
+      </div>
+
+      <div id="dup-wrap" style="display:none">
+        <h3>Duplicate Edges</h3>
+        <div id="dup" class="chips"></div>
+      </div>
+
+      <details>
+        <summary>Show JSON</summary>
+        <pre id="json"></pre>
+      </details>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
